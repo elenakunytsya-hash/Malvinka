@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Heart, User, ShoppingBag, Copy, ExternalLink, Shield, Info, Mail } from 'lucide-react';
-
+import PrivacyPolicy from './PrivacyPolicy';
 const MOCK_PROMOS = [
   {
     id: 1,
@@ -25,7 +25,7 @@ const MOCK_PROMOS = [
   }
 ];
 
-export default function App() {
+export default function App() {const [currentView, setCurrentView] = useState('home');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [savedPromos, setSavedPromos] = useState<number[]>([]);
   const [copiedCode, setCopiedCode] = useState('');
@@ -51,7 +51,7 @@ export default function App() {
       <header style={{ backgroundColor: '#ffb3c6', padding: '1rem 2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
           <ShoppingBag size={24} color="#590d22" />
-          <h1 style={{ margin: 0, fontSize: '1.5rem', fontWeight: 'bold', letterSpacing: '1px' }}>Malvinka</h1>
+         <h1 onClick={() => setCurrentView('home')} style={{ margin: 0, fontSize: '1.5rem', fontWeight: 'bold', letterSpacing: '1px', cursor: 'pointer' }}>Malvinka</h1>
         </div>
         <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
           <button style={navButtonStyle}>
@@ -66,7 +66,7 @@ export default function App() {
           </button>
         </div>
       </header>
-
+{currentView === 'home' ? (
       {/* Main Content */}
       <main style={{ maxWidth: '1000px', margin: '0 auto', padding: '2rem 1rem' }}>
         
@@ -113,7 +113,9 @@ export default function App() {
           ))}
         </div>
       </main>
-
+) : (
+        <PrivacyPolicy />
+      )}
       {/* Footer / Required Legal Pages for Affiliate Approval */}
       <footer style={{ backgroundColor: '#fff', borderTop: '1px solid #ffb3c6', padding: '3rem 2rem', marginTop: '4rem' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '2rem' }}>
@@ -124,7 +126,7 @@ export default function App() {
           <div style={{ display: 'flex', gap: '2rem' }}>
             <a href="#" style={footerLinkStyle}><Info size={16}/> About Us</a>
             <a href="#" style={footerLinkStyle}><Mail size={16}/> Contact: hello@malvinka.ca</a>
-            <a href="#" style={footerLinkStyle}><Shield size={16}/> Privacy Policy</a>
+     <a href="#" onClick={(e) => { e.preventDefault(); setCurrentView('privacy'); }} style={{ color: '#6b7280', textDecoration: 'none', fontSize: '0.875rem' }}>Privacy Policy</a>
           </div>
         </div>
       </footer>
