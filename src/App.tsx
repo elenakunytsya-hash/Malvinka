@@ -67,7 +67,7 @@ export default function App() {const [currentView, setCurrentView] = useState('h
         </div>
       </header>
 {currentView === 'home' ? (
-      {/* Main Content */}
+    
       <main style={{ maxWidth: '1000px', margin: '0 auto', padding: '2rem 1rem' }}>
         
         {/* FTC Disclosure */}
