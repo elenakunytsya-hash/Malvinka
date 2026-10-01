@@ -4,24 +4,27 @@ import PrivacyPolicy from './PrivacyPolicy';
 const MOCK_PROMOS = [
   {
     id: 1,
-    brandName: 'Tartine et Chocolat',
-    description: 'Up to 40% off the Autumn/Winter Collection',
-    discountCode: 'AUTOMNE40',
-    imageUrl: 'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQnc1tHllsTJeGO9-WyCPBPI0ZW0IzA1-a3HMEEHLT5jq-AGaHp-yYJIMV0rproNhVgP9LW43lrdChiNJ0',
+    brand: "Bonpoint",
+    product: "Iconic Smocked Floral Dress",
+    offer: "15% Off First App Purchase",
+    imageUrl: "https://us.bonpoint.com/cdn/shop/files/260420_BONPOINT_F_1A_1_1872_df11b022-aa77-40a2-afbe-350a83a98eaf.jpg?crop=center&height=800&v=1782965933&width=600", 
+    link: "#" 
   },
   {
     id: 2,
-    brandName: 'Il Gufo',
-    description: 'Extra 15% off clearance styles',
-    discountCode: 'GUFO15',
-    imageUrl: 'http://shopdanrie.com/cdn/shop/collections/il-gufo-pic.jpg?v=1730233479',
+    brand: "Donsje",
+    product: "Wadudu Leather Animal Booties",
+    offer: "Free Worldwide Shipping",
+    imageUrl: "https://donsje.com/cdn/shop/files/1028128_NL127_2.jpg?v=1765463095&width=535",
+    link: "#"
   },
   {
     id: 3,
-    brandName: 'Bonpoint',
-    description: 'Complimentary shipping and signature gift wrapping',
-    discountCode: 'BONPOINT24',
-    imageUrl: 'https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=600&q=80',
+    brand: "Il Gufo",
+    product: "Merino Wool Cardigan",
+    offer: "End of Season Sale - Up to 30% Off",
+    imageUrl: https://cdn.ilgufo.com.filoblu.com/rx/q_100,w_1200,ofmt_webp/media/catalog/product/A/2/A26GGR0005W5019_111-111-02.jpg,
+    link: "#"
   }
 ];
 
