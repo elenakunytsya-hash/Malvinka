@@ -96,7 +96,7 @@ export default function App() {const [currentView, setCurrentView] = useState('h
               </div>
 
               <div style={{ padding: '1.5rem' }}>
-                <h3 style={{ margin: '0 0 0.5rem 0', fontSize: '1.25rem' }}>{promo.brandName}</h3>
+                <h3 style={{ margin: '0 0 0.5rem 0', fontSize: '1.25rem' }}>{promo.brand}</h3>
                 <p style={{ margin: '0 0 1.5rem 0', color: '#666', fontSize: '0.95rem', lineHeight: '1.4' }}>{promo.description}</p>
                 
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#fff0f3', padding: '0.75rem', borderRadius: '6px', border: '1px dashed #ffb3c6', marginBottom: '1rem' }}>
