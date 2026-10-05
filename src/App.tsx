@@ -102,9 +102,9 @@ export default function App() {const [currentView, setCurrentView] = useState('h
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#fff0f3', padding: '0.75rem', borderRadius: '6px', border: '1px dashed #ffb3c6', marginBottom: '1rem' }}>
                   <span style={{ fontWeight: 'bold', letterSpacing: '1px' }}>{promo.offer}</span>
                   <button 
-                    onClick={() => handleCopy(promo.discountCode)}
+                    onClick={() => handleCopy(promo.offer)}
                     style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '4px', color: '#ff4d6d', fontWeight: '600', fontSize: '0.85rem' }}>
-                    {copiedCode === promo.discountCode ? 'Copied!' : <><Copy size={16}/> Copy</>}
+                    {copiedCode === promo.offer ? 'Copied!' : <><Copy size={16}/> Copy</>}
                   </button>
                 </div>
 
