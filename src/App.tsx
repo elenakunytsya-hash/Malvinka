@@ -87,7 +87,7 @@ export default function App() {const [currentView, setCurrentView] = useState('h
             <div key={promo.id} style={{ backgroundColor: 'white', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 6px rgba(0,0,0,0.05)' }}>
               
               <div style={{ height: '200px', width: '100%', overflow: 'hidden', position: 'relative' }}>
-                <img src={promo.imageUrl} alt={promo.brandName} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src={promo.imageUrl} alt={promo.brand} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 <button 
                   onClick={() => toggleSave(promo.id)}
                   style={{ position: 'absolute', top: '10px', right: '10px', background: 'white', border: 'none', borderRadius: '50%', padding: '8px', cursor: 'pointer', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
