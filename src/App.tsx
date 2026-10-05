@@ -23,7 +23,7 @@ const MOCK_PROMOS = [
     brand: "Il Gufo",
     product: "Merino Wool Cardigan",
     offer: "End of Season Sale - Up to 30% Off",
-    imageUrl: https://cdn.ilgufo.com.filoblu.com/rx/q_100,w_1200,ofmt_webp/media/catalog/product/A/2/A26GGR0005W5019_111-111-02.jpg,
+   imageUrl: "https://cdn.ilgufo.com.filoblu.com/rx/q_100,w_1200,ofmt_webp/media/catalog/product/A/2/A26GGR0005W5019_111-1...",
     link: "#"
   }
 ];
