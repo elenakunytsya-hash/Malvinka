@@ -98,7 +98,7 @@ export default function App() {const [currentView, setCurrentView] = useState('h
                <h3 style={{ margin: '0 0 0.5rem 0', fontSize: '1.5rem', fontFamily: "'Playfair Display', serif", fontWeight: '600' }}>{promo.brand}</h3>
                 <p style={{ margin: '0 0 1.5rem 0', color: '#666', fontSize: '0.95rem', lineHeight: '1.4' }}>{promo.product}</p>
                 
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#fff0f3', padding: '0.75rem', borderRadius: '6px', backgroundColor: '#F9F8F6', borderRadius: '4px', marginBottom: '1rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#F9F8F6', padding: '0.75rem', borderRadius: '6px', borderRadius: '4px', marginBottom: '1rem' }}>
                   <span style={{ fontWeight: 'bold', letterSpacing: '1px' }}>{promo.offer}</span>
                   <button 
                     onClick={() => handleCopy(promo.offer)}
