@@ -66,10 +66,9 @@ export default function App() {
             <h2 style={{ fontSize: '2.5rem', fontFamily: "'Playfair Display', serif", fontWeight: '600', marginBottom: '1rem' }}>
               The Autumn Wool Edit
             </h2>
-            <p style={{ color: '#666', lineHeight: '1.6', fontSize: '1.05rem', maxWidth: '600px', margin: '0 auto' }}>
-              Curated in Toronto, Malvinka brings the finest European boutique finds directly to discerning parents. Inspired by the meticulous search for premium, lasting pieces for Мальвина, our dashboard aggregates exclusive promotions so you can build a heritage wardrobe effortlessly.
+           <p style={{ color: '#666', lineHeight: '1.6', fontSize: '1.05rem', maxWidth: '600px', margin: '0 auto' }}>
+              Curated in Toronto, Malvinka brings the finest European boutique finds directly to discerning parents. Inspired by the meticulous search for premium, lasting pieces for Malvina, our dashboard aggregates exclusive promotions so you can build a heritage wardrobe effortlessly.
             </p>
-          </div>
 
           {/* FTC Disclosure */}
           <div style={{ backgroundColor: '#ffe5ec', padding: '1rem', borderRadius: '8px', marginBottom: '2rem', fontSize: '0.9rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
