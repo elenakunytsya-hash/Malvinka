@@ -1,6 +1,14 @@
 import React, { useState } from 'react';
 import { Heart, User, ShoppingBag, Copy, ExternalLink, Shield, Info, Mail } from 'lucide-react';
 import PrivacyPolicy from './PrivacyPolicy';
+{savedPromos.length === 0 ? (
+  <div style={{ textAlign: 'center', padding: '4rem 2rem', color: '#666' }}>
+    <p style={{ fontSize: '1.1rem', fontFamily: "'Playfair Display', serif" }}>Your curated wardrobe is empty.</p>
+    <p style={{ fontSize: '0.9rem' }}>Explore our latest seasonal edits to begin your collection.</p>
+  </div>
+) : (
+  // Your existing saved items mapping code here
+)}
 const MOCK_PROMOS = [
   {
     id: 1,
@@ -94,11 +102,11 @@ export default function App() {const [currentView, setCurrentView] = useState('h
                 </button>
               </div>
 
-              <div style={{ padding: '1.5rem' }}>
-                <h3 style={{ margin: '0 0 0.5rem 0', fontSize: '1.25rem' }}>{promo.brand}</h3>
+              <div style={{ padding: '2rem' }}>
+               <h3 style={{ margin: '0 0 0.5rem 0', fontSize: '1.5rem', fontFamily: "'Playfair Display', serif", fontWeight: '600' }}>{promo.brand}</h3>
                 <p style={{ margin: '0 0 1.5rem 0', color: '#666', fontSize: '0.95rem', lineHeight: '1.4' }}>{promo.product}</p>
                 
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#fff0f3', padding: '0.75rem', borderRadius: '6px', border: '1px dashed #ffb3c6', marginBottom: '1rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#fff0f3', padding: '0.75rem', borderRadius: '6px', backgroundColor: '#F9F8F6', borderRadius: '4px', marginBottom: '1rem' }}>
                   <span style={{ fontWeight: 'bold', letterSpacing: '1px' }}>{promo.offer}</span>
                   <button 
                     onClick={() => handleCopy(promo.offer)}
@@ -107,8 +115,8 @@ export default function App() {const [currentView, setCurrentView] = useState('h
                   </button>
                 </div>
 
-                <button style={{ width: '100%', backgroundColor: '#590d22', color: 'white', border: 'none', padding: '0.75rem', borderRadius: '6px', fontSize: '1rem', fontWeight: 'bold', cursor: 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px' }}>
-                  Shop Sale <ExternalLink size={18} />
+                <button style={{ width: '100%', backgroundColor: '#2C2C2C', color: 'white', border: 'none', padding: '0.75rem', borderRadius: '6px', fontSize: '1rem', fontWeight: 'bold', cursor: 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px' }}>
+                  Discover the Edit <ExternalLink size={18} />
                 </button>
               </div>
             </div>
@@ -159,3 +167,11 @@ const footerLinkStyle = {
   textDecoration: 'none',
   fontSize: '0.9rem'
 };
+<footer style={{ marginTop: '4rem', padding: '2rem', borderTop: '1px solid #EAEAEA', textAlign: 'center', fontSize: '0.85rem', color: '#888' }}>
+  <p>Malvinka may earn a commission on purchases made through our curated links.</p>
+  <div style={{ marginTop: '1rem', display: 'flex', justifyContent: 'center', gap: '1.5rem' }}>
+    <a href="#" style={{ color: '#888', textDecoration: 'none' }}>Privacy Policy</a>
+    <a href="#" style={{ color: '#888', textDecoration: 'none' }}>Terms of Service</a>
+    <a href="mailto:hello@malvinka.ca" style={{ color: '#888', textDecoration: 'none' }}>Contact Us</a>
+  </div>
+</footer>
