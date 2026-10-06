@@ -69,7 +69,7 @@ export default function App() {
            <p style={{ color: '#666', lineHeight: '1.6', fontSize: '1.05rem', maxWidth: '600px', margin: '0 auto' }}>
               Curated in Toronto, Malvinka brings the finest European boutique finds directly to discerning parents. Inspired by the meticulous search for premium, lasting pieces for Malvina, our dashboard aggregates exclusive promotions so you can build a heritage wardrobe effortlessly.
             </p>
-
+</div>
           {/* FTC Disclosure */}
           <div style={{ backgroundColor: '#ffe5ec', padding: '1rem', borderRadius: '8px', marginBottom: '2rem', fontSize: '0.9rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <Info size={16} />
