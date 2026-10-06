@@ -108,13 +108,15 @@ export default function App() {
               ))
             )}
           </div>
-        </main>
+      </main>
       )}
+      
+      {currentView === 'privacy' && <PrivacyPolicy />}
 
       <footer style={{ marginTop: '4rem', padding: '2rem', borderTop: '1px solid #EAEAEA', textAlign: 'center', fontSize: '0.85rem', color: '#888' }}>
         <p>Malvinka may earn a commission on purchases made through our curated links.</p>
         <div style={{ marginTop: '1rem', display: 'flex', justifyContent: 'center', gap: '1.5rem' }}>
-          <a href="#" style={{ color: '#888', textDecoration: 'none' }}>Privacy Policy</a>
+         <span onClick={() => setCurrentView('privacy')} style={{ color: '#888', textDecoration: 'none', cursor: 'pointer' }}>Privacy Policy</span>
           <a href="#" style={{ color: '#888', textDecoration: 'none' }}>Terms of Service</a>
           <a href="mailto:hello@malvinka.ca" style={{ color: '#888', textDecoration: 'none' }}>Contact Us</a>
         </div>
