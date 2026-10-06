@@ -98,14 +98,7 @@ export default function App() {const [currentView, setCurrentView] = useState('h
                <h3 style={{ margin: '0 0 0.5rem 0', fontSize: '1.5rem', fontFamily: "'Playfair Display', serif", fontWeight: '600' }}>{promo.brand}</h3>
                 <p style={{ margin: '0 0 1.5rem 0', color: '#666', fontSize: '0.95rem', lineHeight: '1.4' }}>{promo.product}</p>
                 
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#F9F8F6', padding: '0.75rem', borderRadius: '6px', borderRadius: '4px', marginBottom: '1rem' }}>
-                  <span style={{ fontWeight: 'bold', letterSpacing: '1px' }}>{promo.offer}</span>
-                  <button 
-                    onClick={() => handleCopy(promo.offer)}
-                    style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '4px', color: '#ff4d6d', fontWeight: '600', fontSize: '0.85rem' }}>
-                    {copiedCode === promo.offer ? 'Copied!' : <><Copy size={16}/> Copy</>}
-                  </button>
-                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#F9F8F6', padding: '1rem', borderRadius: '4px' }}>
 
                 <button style={{ width: '100%', backgroundColor: '#2C2C2C', color: 'white', border: 'none', padding: '0.75rem', borderRadius: '6px', fontSize: '1rem', fontWeight: 'bold', cursor: 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px' }}>
                   Discover the Edit <ExternalLink size={18} />
