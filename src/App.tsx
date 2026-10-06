@@ -37,71 +37,80 @@ export default function App() {
   };
 
   return (
-    <div style={{ fontFamily: 'system-ui, sans-serif', backgroundColor: '#fff0f3', minHeight: '100vh', color: '#590d22' }}>
+    <div style={{ fontFamily: "'Inter', system-ui, sans-serif", backgroundColor: '#FCFBF9', minHeight: '100vh', color: '#2C2C2C' }}>
       
       {/* Header */}
-      <header style={{ backgroundColor: '#ffb3c6', padding: '1rem 2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-          <ShoppingBag size={24} color="#590d22" />
-          <h1 onClick={() => setCurrentView('home')} style={{ margin: 0, fontSize: '1.5rem', fontWeight: 'bold', letterSpacing: '1px', cursor: 'pointer' }}>Malvinka</h1>
+      <header style={{ backgroundColor: '#FFFFFF', padding: '1rem 3rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #EAEAEA', position: 'sticky', top: 0, zIndex: 10 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+          <ShoppingBag size={22} color="#2C2C2C" />
+          <h1 onClick={() => setCurrentView('home')} style={{ margin: 0, fontSize: '1.6rem', fontFamily: "'Playfair Display', serif", fontWeight: '700', letterSpacing: '0.5px', cursor: 'pointer' }}>
+            Malvinka
+          </h1>
         </div>
-        <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+        <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
           <button style={navButtonStyle}>
-            <Heart size={20} />
+            <Heart size={18} />
             <span>Saved ({savedPromos.length})</span>
           </button>
           <button 
             onClick={() => setIsLoggedIn(!isLoggedIn)}
-            style={{ ...navButtonStyle, backgroundColor: isLoggedIn ? '#ff8fab' : 'transparent', border: '1px solid #590d22' }}>
-            <User size={20} />
+            style={{ ...navButtonStyle, backgroundColor: isLoggedIn ? '#F5F5F5' : 'transparent', border: '1px solid #EAEAEA' }}>
+            <User size={18} />
             <span>{isLoggedIn ? 'My Account' : 'Sign In'}</span>
           </button>
         </div>
       </header>
 
       {currentView === 'home' && (
-        <main style={{ maxWidth: '1000px', margin: '0 auto', padding: '2rem 1rem' }}>
+        <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '3rem 2rem' }}>
           
           {/* Editorial Founder Block */}
           <div style={{ textAlign: 'center', margin: '2rem 0 4rem 0', padding: '0 2rem' }}>
-            <h2 style={{ fontSize: '2.5rem', fontFamily: "'Playfair Display', serif", fontWeight: '600', marginBottom: '1rem' }}>
+            <h2 style={{ fontSize: '2.75rem', fontFamily: "'Playfair Display', serif", fontWeight: '500', marginBottom: '1.5rem', color: '#1A1A1A' }}>
               The Autumn Wool Edit
             </h2>
-           <p style={{ color: '#666', lineHeight: '1.6', fontSize: '1.05rem', maxWidth: '600px', margin: '0 auto' }}>
+            <p style={{ color: '#555', lineHeight: '1.8', fontSize: '1.1rem', maxWidth: '650px', margin: '0 auto' }}>
               Curated in Toronto, Malvinka brings the finest European boutique finds directly to discerning parents. Inspired by the meticulous search for premium, lasting pieces for Malvina, our dashboard aggregates exclusive promotions so you can build a heritage wardrobe effortlessly.
             </p>
-</div>
+          </div>
+
           {/* FTC Disclosure */}
-          <div style={{ backgroundColor: '#ffe5ec', padding: '1rem', borderRadius: '8px', marginBottom: '2rem', fontSize: '0.9rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            <Info size={16} />
+          <div style={{ backgroundColor: '#FFFFFF', padding: '1rem 1.5rem', borderRadius: '6px', border: '1px solid #EAEAEA', marginBottom: '3rem', fontSize: '0.85rem', color: '#666', display: 'flex', alignItems: 'center', gap: '0.75rem', maxWidth: '800px', margin: '0 auto 4rem auto' }}>
+            <Info size={16} color="#999" />
             <span><strong>Affiliate Disclosure:</strong> Malvinka is a curated deal dashboard. We may earn a commission if you purchase through our affiliate links.</span>
           </div>
 
           {/* Promotions Grid */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '2.5rem' }}>
             {promos.length === 0 ? (
-              <p style={{ gridColumn: '1 / -1', textAlign: 'center', color: '#888', padding: '3rem' }}>Curating the latest boutique arrivals...</p>
+              <p style={{ gridColumn: '1 / -1', textAlign: 'center', color: '#888', padding: '3rem', fontStyle: 'italic' }}>Curating the latest boutique arrivals...</p>
             ) : (
               promos.map((promo) => (
-                <div key={promo.id} style={{ backgroundColor: 'white', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 6px rgba(0,0,0,0.05)' }}>
+                <div key={promo.id} style={{ backgroundColor: '#FFFFFF', borderRadius: '8px', overflow: 'hidden', border: '1px solid #F0F0F0', transition: 'transform 0.2s ease, box-shadow 0.2s ease', cursor: 'pointer' }}
+                     onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = '0 12px 24px rgba(0,0,0,0.06)'; }}
+                     onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = 'none'; }}>
                   
-                  <div style={{ height: '300px', width: '100%', overflow: 'hidden', position: 'relative' }}>
+                  <div style={{ height: '350px', width: '100%', overflow: 'hidden', position: 'relative', backgroundColor: '#F9F9F9' }}>
                     <img src={promo.imageUrl} alt={promo.brand} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                     <button 
                       onClick={() => toggleSave(promo.id)}
-                      style={{ position: 'absolute', top: '10px', right: '10px', background: 'white', border: 'none', borderRadius: '50%', padding: '8px', cursor: 'pointer', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
-                      <Heart size={20} color={savedPromos.includes(promo.id) ? '#ff4d6d' : '#ccc'} fill={savedPromos.includes(promo.id) ? '#ff4d6d' : 'none'} />
+                      style={{ position: 'absolute', top: '15px', right: '15px', background: 'rgba(255,255,255,0.9)', border: 'none', borderRadius: '50%', padding: '10px', cursor: 'pointer', boxShadow: '0 2px 8px rgba(0,0,0,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'transform 0.1s' }}
+                      onMouseDown={(e) => e.currentTarget.style.transform = 'scale(0.9)'}
+                      onMouseUp={(e) => e.currentTarget.style.transform = 'scale(1)'}>
+                      <Heart size={18} color={savedPromos.includes(promo.id) ? '#D9534F' : '#999'} fill={savedPromos.includes(promo.id) ? '#D9534F' : 'none'} />
                     </button>
                   </div>
 
-                  <div style={{ padding: '2rem' }}>
-                    <h3 style={{ margin: '0 0 0.5rem 0', fontSize: '1.5rem', fontFamily: "'Playfair Display', serif", fontWeight: '600' }}>{promo.brand}</h3>
-                    <p style={{ margin: '0 0 1.5rem 0', color: '#666', fontSize: '0.95rem', lineHeight: '1.4' }}>{promo.product}</p>
+                  <div style={{ padding: '1.5rem' }}>
+                    <h3 style={{ margin: '0 0 0.25rem 0', fontSize: '1.25rem', fontFamily: "'Playfair Display', serif", fontWeight: '600', color: '#1A1A1A' }}>{promo.brand}</h3>
+                    <p style={{ margin: '0 0 1.5rem 0', color: '#666', fontSize: '0.9rem', lineHeight: '1.5' }}>{promo.product}</p>
                     
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#F9F8F6', padding: '1rem', borderRadius: '4px' }}>
-                      <span style={{ fontWeight: 'bold', letterSpacing: '1px', fontSize: '0.9rem' }}>{promo.offer}</span>
-                      <a href={promo.link} style={{ backgroundColor: '#2C2C2C', color: 'white', textDecoration: 'none', padding: '0.75rem 1rem', borderRadius: '6px', fontSize: '0.9rem', fontWeight: 'bold', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                        Shop <ExternalLink size={16} />
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid #F0F0F0', paddingTop: '1.25rem' }}>
+                      <span style={{ fontWeight: '500', fontSize: '0.85rem', color: '#D9534F' }}>{promo.offer}</span>
+                      <a href={promo.link} style={{ backgroundColor: '#1A1A1A', color: '#FFFFFF', textDecoration: 'none', padding: '0.6rem 1.2rem', borderRadius: '4px', fontSize: '0.85rem', fontWeight: '500', transition: 'background-color 0.2s', display: 'flex', alignItems: 'center', gap: '6px' }}
+                         onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#333333'}
+                         onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#1A1A1A'}>
+                        Shop <ExternalLink size={14} />
                       </a>
                     </div>
                   </div>
@@ -109,18 +118,18 @@ export default function App() {
               ))
             )}
           </div>
-      </main>
+        </main>
       )}
-      
+
       {currentView === 'privacy' && <PrivacyPolicy />}
       {currentView === 'terms' && <TermsOfService />}
 
-      <footer style={{ marginTop: '4rem', padding: '2rem', borderTop: '1px solid #EAEAEA', textAlign: 'center', fontSize: '0.85rem', color: '#888' }}>
-        <p>Malvinka may earn a commission on purchases made through our curated links.</p>
-        <div style={{ marginTop: '1rem', display: 'flex', justifyContent: 'center', gap: '1.5rem' }}>
-         <span onClick={() => setCurrentView('privacy')} style={{ color: '#888', textDecoration: 'none', cursor: 'pointer' }}>Privacy Policy</span>
-          <span onClick={() => setCurrentView('terms')} style={{ color: '#888', textDecoration: 'none', cursor: 'pointer' }}>Terms of Service</span>
-          <a href="mailto:hello@malvinka.ca" style={{ color: '#888', textDecoration: 'none' }}>Contact Us</a>
+      <footer style={{ marginTop: '5rem', padding: '3rem 2rem', borderTop: '1px solid #EAEAEA', textAlign: 'center', fontSize: '0.85rem', color: '#888', backgroundColor: '#FFFFFF' }}>
+        <p style={{ marginBottom: '1.5rem' }}>Malvinka may earn a commission on purchases made through our curated links.</p>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem' }}>
+          <span onClick={() => setCurrentView('privacy')} style={{ color: '#666', textDecoration: 'none', cursor: 'pointer', transition: 'color 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.color = '#1A1A1A'} onMouseLeave={(e) => e.currentTarget.style.color = '#666'}>Privacy Policy</span>
+          <span onClick={() => setCurrentView('terms')} style={{ color: '#666', textDecoration: 'none', cursor: 'pointer', transition: 'color 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.color = '#1A1A1A'} onMouseLeave={(e) => e.currentTarget.style.color = '#666'}>Terms of Service</span>
+          <a href="mailto:hello@malvinka.ca" style={{ color: '#666', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.color = '#1A1A1A'} onMouseLeave={(e) => e.currentTarget.style.color = '#666'}>Contact Us</a>
         </div>
       </footer>
     </div>
@@ -131,13 +140,14 @@ export default function App() {
 const navButtonStyle = {
   display: 'flex',
   alignItems: 'center',
-  gap: '6px',
+  gap: '8px',
   background: 'none',
   border: 'none',
-  color: '#590d22',
-  fontWeight: '600',
+  color: '#2C2C2C',
+  fontWeight: '500',
+  fontSize: '0.9rem',
   cursor: 'pointer',
-  padding: '8px 12px',
-  borderRadius: '6px',
-  transition: 'background 0.2s'
+  padding: '8px 16px',
+  borderRadius: '20px',
+  transition: 'all 0.2s ease'
 };
