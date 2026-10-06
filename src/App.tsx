@@ -104,28 +104,19 @@ export default function App() {const [currentView, setCurrentView] = useState('h
                   Discover the Edit <ExternalLink size={18} />
                 </button>
               </div>
-            </div>
-          ))}
-        </div>
-      </main>
-) : (
-        <PrivacyPolicy />
-      )}
-      {/* Footer / Required Legal Pages for Affiliate Approval */}
-      <footer style={{ backgroundColor: '#fff', borderTop: '1px solid #ffb3c6', padding: '3rem 2rem', marginTop: '4rem' }}>
-        <div style={{ maxWidth: '1000px', margin: '0 auto', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '2rem' }}>
-          <div>
-            <h4 style={{ margin: '0 0 1rem 0' }}>Malvinka</h4>
-            <p style={{ margin: 0, color: '#666', fontSize: '0.9rem', maxWidth: '300px' }}>Helping parents find the best promotions on premium children's apparel and boutique brands.</p>
-          </div>
-          <div style={{ display: 'flex', gap: '2rem' }}>
-            <a href="#" style={footerLinkStyle}><Info size={16}/> About Us</a>
-            <a href="#" style={footerLinkStyle}><Mail size={16}/> Contact: hello@malvinka.ca</a>
-     <a href="#" onClick={(e) => { e.preventDefault(); setCurrentView('privacy'); }} style={{ color: '#6b7280', textDecoration: 'none', fontSize: '0.875rem' }}>Privacy Policy</a>
-          </div>
-        </div>
-      </footer>
+         ))}
     </div>
+  )}
+
+  <footer style={{ marginTop: '4rem', padding: '2rem', borderTop: '1px solid #EAEAEA', textAlign: 'center', fontSize: '0.85rem', color: '#888' }}>
+    <p>Malvinka may earn a commission on purchases made through our curated links.</p>
+    <div style={{ marginTop: '1rem', display: 'flex', justifyContent: 'center', gap: '1.5rem' }}>
+      <a href="#" style={{ color: '#888', textDecoration: 'none' }}>Privacy Policy</a>
+      <a href="#" style={{ color: '#888', textDecoration: 'none' }}>Terms of Service</a>
+      <a href="mailto:hello@malvinka.ca" style={{ color: '#888', textDecoration: 'none' }}>Contact Us</a>
+    </div>
+  </footer>
+</div>
   );
 }
 
