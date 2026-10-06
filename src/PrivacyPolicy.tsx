@@ -2,25 +2,21 @@ import React from 'react';
 
 export default function PrivacyPolicy() {
   return (
-    <div style={{ maxWidth: '800px', margin: '0 auto', padding: '2rem', backgroundColor: 'white', borderRadius: '12px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)', marginTop: '2rem', marginBottom: '2rem' }}>
-      <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>Privacy Policy for Malvinka</h2>
-      <p style={{ marginBottom: '1rem' }}><strong>Effective Date:</strong> September 28, 2026</p>
+    <div style={{ maxWidth: '800px', margin: '0 auto', padding: '4rem 2rem', lineHeight: '1.8', color: '#333' }}>
+      <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: '2.5rem', marginBottom: '2rem' }}>Privacy Policy</h1>
+      <p style={{ color: '#666', marginBottom: '2rem' }}>Last updated: October 2026</p>
       
-      <h3 style={{ fontSize: '1.2rem', fontWeight: 'bold', marginTop: '1.5rem', marginBottom: '0.5rem' }}>1. Introduction</h3>
-      <p style={{ marginBottom: '1rem' }}>Welcome to Malvinka (malvinka.ca). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our curated deal dashboard.</p>
-      
-      <h3 style={{ fontSize: '1.2rem', fontWeight: 'bold', marginTop: '1.5rem', marginBottom: '0.5rem' }}>2. Affiliate Marketing, Tracking & FTC Disclosure</h3>
-      <p style={{ marginBottom: '0.5rem' }}>Malvinka participates in affiliate marketing programs, primarily through the Awin network. When you click on outbound shopping links to our retail partners and make a purchase, we may earn a commission.</p>
-      <ul style={{ marginLeft: '1.5rem', marginBottom: '1rem' }}>
-        <li><strong>Affiliate Tracking Cookies:</strong> To correctly attribute sales, our affiliate networks use tracking cookies and click IDs when you follow a promotional link.</li>
-        <li><strong>Data Minimization:</strong> These networks collect non-sensitive technical data to verify transactions. They do not build behavioral profiles or collect banking details.</li>
-      </ul>
+      <h2 style={{ fontSize: '1.5rem', marginTop: '2rem', marginBottom: '1rem' }}>1. Introduction</h2>
+      <p>Welcome to Malvinka. We curate European boutique finds directly for discerning parents. This Privacy Policy explains how we collect, use, and protect your information when you visit our website. We are committed to ensuring your privacy is protected in accordance with PIPEDA and applicable Canadian data protection laws.</p>
 
-      <h3 style={{ fontSize: '1.2rem', fontWeight: 'bold', marginTop: '1.5rem', marginBottom: '0.5rem' }}>3. Information We Collect Directly</h3>
-      <p style={{ marginBottom: '1rem' }}>We only collect personal information that you voluntarily provide, such as saving specific brand promotions to your device.</p>
+      <h2 style={{ fontSize: '1.5rem', marginTop: '2rem', marginBottom: '1rem' }}>2. Affiliate Links & Cookies</h2>
+      <p>Malvinka operates as a curated deal dashboard. We participate in affiliate marketing programs, including the Rakuten Affiliate Network. When you click on outgoing links to our merchant partners and make a purchase, we may earn a commission. Our affiliate partners use cookies to track these referrals and attribute sales correctly.</p>
 
-      <h3 style={{ fontSize: '1.2rem', fontWeight: 'bold', marginTop: '1.5rem', marginBottom: '0.5rem' }}>4. Contact Us</h3>
-      <p>For any questions regarding this Privacy Policy, your data, or our affiliate relationships, please contact us at <strong>hello@malvinka.ca</strong>.</p>
+      <h2 style={{ fontSize: '1.5rem', marginTop: '2rem', marginBottom: '1rem' }}>3. Information Collection & Firebase</h2>
+      <p>To deliver a fast, dynamic experience, our platform utilizes Google Firebase for hosting and database management. Firebase may collect basic, anonymous analytics (such as device type and browser) to ensure the site functions securely. We do not sell any personal data to third parties.</p>
+
+      <h2 style={{ fontSize: '1.5rem', marginTop: '2rem', marginBottom: '1rem' }}>4. Contact Us</h2>
+      <p>If you have any questions about this Privacy Policy or how your data is handled, please contact us at hello@malvinka.ca.</p>
     </div>
   );
 }
