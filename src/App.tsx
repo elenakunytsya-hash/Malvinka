@@ -1,14 +1,6 @@
 import React, { useState } from 'react';
 import { Heart, User, ShoppingBag, Copy, ExternalLink, Shield, Info, Mail } from 'lucide-react';
 import PrivacyPolicy from './PrivacyPolicy';
-{savedPromos.length === 0 ? (
-  <div style={{ textAlign: 'center', padding: '4rem 2rem', color: '#666' }}>
-    <p style={{ fontSize: '1.1rem', fontFamily: "'Playfair Display', serif" }}>Your curated wardrobe is empty.</p>
-    <p style={{ fontSize: '0.9rem' }}>Explore our latest seasonal edits to begin your collection.</p>
-  </div>
-) : (
-  // Your existing saved items mapping code here
-)}
 const MOCK_PROMOS = [
   {
     id: 1,
