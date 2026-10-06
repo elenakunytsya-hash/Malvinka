@@ -93,30 +93,30 @@ export default function App() {const [currentView, setCurrentView] = useState('h
                   <Heart size={20} color={savedPromos.includes(promo.id) ? '#ff4d6d' : '#ccc'} fill={savedPromos.includes(promo.id) ? '#ff4d6d' : 'none'} />
                 </button>
               </div>
-
-              <div style={{ padding: '2rem' }}>
-               <h3 style={{ margin: '0 0 0.5rem 0', fontSize: '1.5rem', fontFamily: "'Playfair Display', serif", fontWeight: '600' }}>{promo.brand}</h3>
+<div style={{ padding: '2rem' }}>
+                <h3 style={{ margin: '0 0 0.5rem 0', fontSize: '1.5rem', fontFamily: "'Playfair Display', serif", fontWeight: '600' }}>{promo.brand}</h3>
                 <p style={{ margin: '0 0 1.5rem 0', color: '#666', fontSize: '0.95rem', lineHeight: '1.4' }}>{promo.product}</p>
                 
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#F9F8F6', padding: '1rem', borderRadius: '4px' }}>
-
-                <button style={{ width: '100%', backgroundColor: '#2C2C2C', color: 'white', border: 'none', padding: '0.75rem', borderRadius: '6px', fontSize: '1rem', fontWeight: 'bold', cursor: 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px' }}>
-                  Discover the Edit <ExternalLink size={18} />
-                </button>
+                  <button style={{ width: '100%', backgroundColor: '#2C2C2C', color: 'white', border: 'none', padding: '0.75rem', borderRadius: '6px', fontSize: '1rem', fontWeight: 'bold', cursor: 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px' }}>
+                    Discover the Edit <ExternalLink size={18} />
+                  </button>
+                </div>
               </div>
-         ))}
-    </div>
-  )}
+            </div>
+          ))}
+        </div>
+      )}
 
-  <footer style={{ marginTop: '4rem', padding: '2rem', borderTop: '1px solid #EAEAEA', textAlign: 'center', fontSize: '0.85rem', color: '#888' }}>
-    <p>Malvinka may earn a commission on purchases made through our curated links.</p>
-    <div style={{ marginTop: '1rem', display: 'flex', justifyContent: 'center', gap: '1.5rem' }}>
-      <a href="#" style={{ color: '#888', textDecoration: 'none' }}>Privacy Policy</a>
-      <a href="#" style={{ color: '#888', textDecoration: 'none' }}>Terms of Service</a>
-      <a href="mailto:hello@malvinka.ca" style={{ color: '#888', textDecoration: 'none' }}>Contact Us</a>
+      <footer style={{ marginTop: '4rem', padding: '2rem', borderTop: '1px solid #EAEAEA', textAlign: 'center', fontSize: '0.85rem', color: '#888' }}>
+        <p>Malvinka may earn a commission on purchases made through our curated links.</p>
+        <div style={{ marginTop: '1rem', display: 'flex', justifyContent: 'center', gap: '1.5rem' }}>
+          <a href="#" style={{ color: '#888', textDecoration: 'none' }}>Privacy Policy</a>
+          <a href="#" style={{ color: '#888', textDecoration: 'none' }}>Terms of Service</a>
+          <a href="mailto:hello@malvinka.ca" style={{ color: '#888', textDecoration: 'none' }}>Contact Us</a>
+        </div>
+      </footer>
     </div>
-  </footer>
-</div>
   );
 }
 
@@ -143,11 +143,3 @@ const footerLinkStyle = {
   textDecoration: 'none',
   fontSize: '0.9rem'
 };
-<footer style={{ marginTop: '4rem', padding: '2rem', borderTop: '1px solid #EAEAEA', textAlign: 'center', fontSize: '0.85rem', color: '#888' }}>
-  <p>Malvinka may earn a commission on purchases made through our curated links.</p>
-  <div style={{ marginTop: '1rem', display: 'flex', justifyContent: 'center', gap: '1.5rem' }}>
-    <a href="#" style={{ color: '#888', textDecoration: 'none' }}>Privacy Policy</a>
-    <a href="#" style={{ color: '#888', textDecoration: 'none' }}>Terms of Service</a>
-    <a href="mailto:hello@malvinka.ca" style={{ color: '#888', textDecoration: 'none' }}>Contact Us</a>
-  </div>
-</footer>
