@@ -1,13 +1,14 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
-const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "malvinka-xxxx.firebaseapp.com",
-  projectId: "malvinka-xxxx",
-  storageBucket: "malvinka-xxxx.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
+const const firebaseConfig = {
+  apiKey: "AIzaSyBNLkp_i_tmjElTW9zFkICXL1X3__k-oXI",
+  authDomain: "malvinka-e4127.firebaseapp.com",
+  projectId: "malvinka-e4127",
+  storageBucket: "malvinka-e4127.firebasestorage.app",
+  messagingSenderId: "875502969233",
+  appId: "1:875502969233:web:9a9640048f045171d17a30",
+  measurementId: "G-193YBKSZ9E"
 };
 
 const app = initializeApp(firebaseConfig);
