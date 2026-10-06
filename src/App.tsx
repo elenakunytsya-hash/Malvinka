@@ -3,6 +3,7 @@ import { Heart, User, ShoppingBag, ExternalLink, Info } from 'lucide-react';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from './firebase';
 import PrivacyPolicy from './PrivacyPolicy';
+import TermsOfService from './TermsOfService';
 
 export default function App() {
   const [currentView, setCurrentView] = useState('home');
@@ -112,12 +113,13 @@ export default function App() {
       )}
       
       {currentView === 'privacy' && <PrivacyPolicy />}
+      {currentView === 'terms' && <TermsOfService />}
 
       <footer style={{ marginTop: '4rem', padding: '2rem', borderTop: '1px solid #EAEAEA', textAlign: 'center', fontSize: '0.85rem', color: '#888' }}>
         <p>Malvinka may earn a commission on purchases made through our curated links.</p>
         <div style={{ marginTop: '1rem', display: 'flex', justifyContent: 'center', gap: '1.5rem' }}>
          <span onClick={() => setCurrentView('privacy')} style={{ color: '#888', textDecoration: 'none', cursor: 'pointer' }}>Privacy Policy</span>
-          <a href="#" style={{ color: '#888', textDecoration: 'none' }}>Terms of Service</a>
+          <span onClick={() => setCurrentView('terms')} style={{ color: '#888', textDecoration: 'none', cursor: 'pointer' }}>Terms of Service</span>
           <a href="mailto:hello@malvinka.ca" style={{ color: '#888', textDecoration: 'none' }}>Contact Us</a>
         </div>
       </footer>
