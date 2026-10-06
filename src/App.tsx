@@ -1,39 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Heart, User, ShoppingBag, ExternalLink, Info } from 'lucide-react';
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from './firebase';
 import PrivacyPolicy from './PrivacyPolicy';
-
-const MOCK_PROMOS = [
-  {
-    id: 1,
-    brand: 'Bonpoint',
-    product: 'Iconic Smocked Floral Dress',
-    offer: '15% Off First App Purchase',
-    imageUrl: 'https://us.bonpoint.com/cdn/shop/files/260420_BONPOINT_F_1A_1_1872_df11b022-aa77-40a2-afbe-350a83a98eaf.jpg?crop=center&height=800&v=1782965933&width=600', 
-    link: '#' 
-  },
-  {
-    id: 2,
-    brand: 'Donsje',
-    product: 'Wadudu Leather Animal Booties',
-    offer: 'Free Worldwide Shipping',
-    imageUrl: 'https://donsje.com/cdn/shop/files/1028128_NL127_2.jpg?v=1765463095&width=535',
-    link: '#'
-  },
-  {
-    id: 3,
-    brand: 'Il Gufo',
-    product: 'Merino Wool Cardigan',
-    offer: 'End of Season Sale - Up to 30% Off',
-    imageUrl: '/il gufo.jpg',
-  }
-];
 
 export default function App() {
   const [currentView, setCurrentView] = useState('home');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [savedPromos, setSavedPromos] = useState<number[]>([]);
+  const [savedPromos, setSavedPromos] = useState<string[]>([]);
+  const [promos, setPromos] = useState<any[]>([]);
 
-  const toggleSave = (id: number) => {
+  useEffect(() => {
+    const fetchPromos = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, "promotions"));
+        const promosData = querySnapshot.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data()
+        }));
+        setPromos(promosData);
+      } catch (error) {
+        console.error("Error fetching inventory: ", error);
+      }
+    };
+
+    fetchPromos();
+  }, []);
+
+  const toggleSave = (id: string) => {
     if (savedPromos.includes(id)) {
       setSavedPromos(savedPromos.filter(promoId => promoId !== id));
     } else {
@@ -67,68 +61,53 @@ export default function App() {
       {currentView === 'home' && (
         <main style={{ maxWidth: '1000px', margin: '0 auto', padding: '2rem 1rem' }}>
           
+          {/* Editorial Founder Block */}
+          <div style={{ textAlign: 'center', margin: '2rem 0 4rem 0', padding: '0 2rem' }}>
+            <h2 style={{ fontSize: '2.5rem', fontFamily: "'Playfair Display', serif", fontWeight: '600', marginBottom: '1rem' }}>
+              The Autumn Wool Edit
+            </h2>
+            <p style={{ color: '#666', lineHeight: '1.6', fontSize: '1.05rem', maxWidth: '600px', margin: '0 auto' }}>
+              Curated in Toronto, Malvinka brings the finest European boutique finds directly to discerning parents. Inspired by the meticulous search for premium, lasting pieces for Мальвина, our dashboard aggregates exclusive promotions so you can build a heritage wardrobe effortlessly.
+            </p>
+          </div>
+
           {/* FTC Disclosure */}
           <div style={{ backgroundColor: '#ffe5ec', padding: '1rem', borderRadius: '8px', marginBottom: '2rem', fontSize: '0.9rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <Info size={16} />
             <span><strong>Affiliate Disclosure:</strong> Malvinka is a curated deal dashboard. We may earn a commission if you purchase through our affiliate links.</span>
           </div>
 
-          <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem', fontWeight: '300' }}>Curated Boutique Promotions</h2>
-
           {/* Promotions Grid */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '2rem' }}>
-            {MOCK_PROMOS.map((promo) => (
-              <div key={promo.id} style={{ backgroundColor: 'white', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 6px rgba(0,0,0,0.05)' }}>
-                
-                <div style={{ height: '200px', width: '100%', overflow: 'hidden', position: 'relative' }}>
-                  <img src={promo.imageUrl} alt={promo.brand} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                  <button 
-                    onClick={() => toggleSave(promo.id)}
-                    style={{ position: 'absolute', top: '10px', right: '10px', background: 'white', border: 'none', borderRadius: '50%', padding: '8px', cursor: 'pointer', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
-                    <Heart size={20} color={savedPromos.includes(promo.id) ? '#ff4d6d' : '#ccc'} fill={savedPromos.includes(promo.id) ? '#ff4d6d' : 'none'} />
-                  </button>
-                </div>
-
-                <div style={{ padding: '2rem' }}>
-                  <h3 style={{ 
-                    margin: '0 0 0.5rem 0', 
-                    fontSize: '1.5rem', 
-                    fontFamily: 'Playfair Display, serif', 
-                    fontWeight: '600' 
-                  }}>
-                    {promo.brand}
-                  </h3>
-                  <p style={{ margin: '0 0 1.5rem 0', color: '#666', fontSize: '0.95rem', lineHeight: '1.4' }}>{promo.product}</p>
+            {promos.length === 0 ? (
+              <p style={{ gridColumn: '1 / -1', textAlign: 'center', color: '#888', padding: '3rem' }}>Curating the latest boutique arrivals...</p>
+            ) : (
+              promos.map((promo) => (
+                <div key={promo.id} style={{ backgroundColor: 'white', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 4px 6px rgba(0,0,0,0.05)' }}>
                   
-                  <div style={{ 
-                    display: 'flex', 
-                    justifyContent: 'space-between', 
-                    alignItems: 'center', 
-                    backgroundColor: '#F9F8F6', 
-                    padding: '1rem', 
-                    borderRadius: '4px' 
-                  }}>
-                    <button style={{ 
-                      width: '100%', 
-                      backgroundColor: '#2C2C2C', 
-                      color: 'white', 
-                      border: 'none', 
-                      padding: '0.75rem', 
-                      borderRadius: '6px', 
-                      fontSize: '1rem', 
-                      fontWeight: 'bold', 
-                      cursor: 'pointer', 
-                      display: 'flex', 
-                      justifyContent: 'center', 
-                      alignItems: 'center', 
-                      gap: '8px' 
-                    }}>
-                      Discover the Edit <ExternalLink size={18} />
+                  <div style={{ height: '300px', width: '100%', overflow: 'hidden', position: 'relative' }}>
+                    <img src={promo.imageUrl} alt={promo.brand} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <button 
+                      onClick={() => toggleSave(promo.id)}
+                      style={{ position: 'absolute', top: '10px', right: '10px', background: 'white', border: 'none', borderRadius: '50%', padding: '8px', cursor: 'pointer', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
+                      <Heart size={20} color={savedPromos.includes(promo.id) ? '#ff4d6d' : '#ccc'} fill={savedPromos.includes(promo.id) ? '#ff4d6d' : 'none'} />
                     </button>
                   </div>
+
+                  <div style={{ padding: '2rem' }}>
+                    <h3 style={{ margin: '0 0 0.5rem 0', fontSize: '1.5rem', fontFamily: "'Playfair Display', serif", fontWeight: '600' }}>{promo.brand}</h3>
+                    <p style={{ margin: '0 0 1.5rem 0', color: '#666', fontSize: '0.95rem', lineHeight: '1.4' }}>{promo.product}</p>
+                    
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#F9F8F6', padding: '1rem', borderRadius: '4px' }}>
+                      <span style={{ fontWeight: 'bold', letterSpacing: '1px', fontSize: '0.9rem' }}>{promo.offer}</span>
+                      <a href={promo.link} style={{ backgroundColor: '#2C2C2C', color: 'white', textDecoration: 'none', padding: '0.75rem 1rem', borderRadius: '6px', fontSize: '0.9rem', fontWeight: 'bold', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        Shop <ExternalLink size={16} />
+                      </a>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))
+            )}
           </div>
         </main>
       )}
