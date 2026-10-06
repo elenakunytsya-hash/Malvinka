@@ -23,7 +23,7 @@ const MOCK_PROMOS = [
     brand: "Il Gufo",
     product: "Merino Wool Cardigan",
     offer: "End of Season Sale - Up to 30% Off",
-imageUrl: "/il-gufo.jpg",
+imageUrl: "/il gufo.jpg",
   }
 ];
 
