@@ -35,9 +35,9 @@ export default function App() {
       setSavedPromos([...savedPromos, id]);
     }
   };
-const displayedPromos = currentView === 'saved' ? promos.filter(promo => savedPromos.includes(promo.id)) : promos;
 
-  return (
+  const displayedPromos = currentView === 'saved' ? promos.filter(promo => savedPromos.includes(promo.id)) : promos;
+
   return (
     <div style={{ fontFamily: "'Inter', system-ui, sans-serif", backgroundColor: '#FCFBF9', minHeight: '100vh', color: '#2C2C2C' }}>
       
@@ -50,22 +50,24 @@ const displayedPromos = currentView === 'saved' ? promos.filter(promo => savedPr
           </h1>
         </div>
         <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
-          <button style={navButtonStyle}>
-            <Heart size={18} />
-            <span>Saved ({savedPromos.length})</span>
-          </button>
-          {/*
-         <button 
+          <button 
             onClick={() => setCurrentView('saved')}
             style={{ ...navButtonStyle, backgroundColor: currentView === 'saved' ? '#F5F5F5' : 'transparent', border: '1px solid #EAEAEA' }}>
             <Heart size={18} fill={currentView === 'saved' ? '#D9534F' : 'none'} color={currentView === 'saved' ? '#D9534F' : '#2C2C2C'} />
             <span>Saved ({savedPromos.length})</span>
           </button>
+          {/* 
+          <button 
+            onClick={() => setIsLoggedIn(!isLoggedIn)}
+            style={{ ...navButtonStyle, backgroundColor: isLoggedIn ? '#F5F5F5' : 'transparent', border: '1px solid #EAEAEA' }}>
+            <User size={18} />
+            <span>{isLoggedIn ? 'My Account' : 'Sign In'}</span>
+          </button>
           */}
         </div>
       </header>
 
-     {(currentView === 'home' || currentView === 'saved') && (
+      {(currentView === 'home' || currentView === 'saved') && (
         <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '3rem 2rem' }}>
           
           {/* Editorial Founder Block */}
@@ -144,7 +146,6 @@ const displayedPromos = currentView === 'saved' ? promos.filter(promo => savedPr
   );
 }
 
-// Reusable inline styles
 const navButtonStyle = {
   display: 'flex',
   alignItems: 'center',
