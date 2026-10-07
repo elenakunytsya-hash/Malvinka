@@ -117,7 +117,7 @@ export default function App() {
                     
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid #F0F0F0', paddingTop: '1.25rem' }}>
                       <span style={{ fontWeight: '500', fontSize: '0.85rem', color: '#D9534F' }}>{promo.offer}</span>
-                      <a href={promo.link} style={{ backgroundColor: '#1A1A1A', color: '#FFFFFF', textDecoration: 'none', padding: '0.6rem 1.2rem', borderRadius: '4px', fontSize: '0.85rem', fontWeight: '500', transition: 'background-color 0.2s', display: 'flex', alignItems: 'center', gap: '6px' }}
+                      <a href={promo.link} target="_blank" rel="noopener noreferrer" style={{ backgroundColor: '#1A1A1A', color: '#FFFFFF', textDecoration: 'none', padding: '0.6rem 1.2rem', borderRadius: '4px', fontSize: '0.85rem', fontWeight: '500', transition: 'background-color 0.2s', display: 'flex', alignItems: 'center', gap: '6px' }}
                          onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#333333'}
                          onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#1A1A1A'}>
                         Shop <ExternalLink size={14} />
