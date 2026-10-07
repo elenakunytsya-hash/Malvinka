@@ -52,12 +52,14 @@ export default function App() {
             <Heart size={18} />
             <span>Saved ({savedPromos.length})</span>
           </button>
+          {/*
           <button 
             onClick={() => setIsLoggedIn(!isLoggedIn)}
             style={{ ...navButtonStyle, backgroundColor: isLoggedIn ? '#F5F5F5' : 'transparent', border: '1px solid #EAEAEA' }}>
             <User size={18} />
             <span>{isLoggedIn ? 'My Account' : 'Sign In'}</span>
           </button>
+          */}
         </div>
       </header>
 
