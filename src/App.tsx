@@ -35,7 +35,9 @@ export default function App() {
       setSavedPromos([...savedPromos, id]);
     }
   };
+const displayedPromos = currentView === 'saved' ? promos.filter(promo => savedPromos.includes(promo.id)) : promos;
 
+  return (
   return (
     <div style={{ fontFamily: "'Inter', system-ui, sans-serif", backgroundColor: '#FCFBF9', minHeight: '100vh', color: '#2C2C2C' }}>
       
@@ -53,27 +55,29 @@ export default function App() {
             <span>Saved ({savedPromos.length})</span>
           </button>
           {/*
-          <button 
-            onClick={() => setIsLoggedIn(!isLoggedIn)}
-            style={{ ...navButtonStyle, backgroundColor: isLoggedIn ? '#F5F5F5' : 'transparent', border: '1px solid #EAEAEA' }}>
-            <User size={18} />
-            <span>{isLoggedIn ? 'My Account' : 'Sign In'}</span>
+         <button 
+            onClick={() => setCurrentView('saved')}
+            style={{ ...navButtonStyle, backgroundColor: currentView === 'saved' ? '#F5F5F5' : 'transparent', border: '1px solid #EAEAEA' }}>
+            <Heart size={18} fill={currentView === 'saved' ? '#D9534F' : 'none'} color={currentView === 'saved' ? '#D9534F' : '#2C2C2C'} />
+            <span>Saved ({savedPromos.length})</span>
           </button>
           */}
         </div>
       </header>
 
-      {currentView === 'home' && (
+     {(currentView === 'home' || currentView === 'saved') && (
         <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '3rem 2rem' }}>
           
           {/* Editorial Founder Block */}
           <div style={{ textAlign: 'center', margin: '2rem 0 4rem 0', padding: '0 2rem' }}>
             <h2 style={{ fontSize: '2.75rem', fontFamily: "'Playfair Display', serif", fontWeight: '500', marginBottom: '1.5rem', color: '#1A1A1A' }}>
-              The Autumn Wool Edit
+              {currentView === 'saved' ? 'Your Saved Edits' : 'The Autumn Wool Edit'}
             </h2>
-            <p style={{ color: '#555', lineHeight: '1.8', fontSize: '1.1rem', maxWidth: '650px', margin: '0 auto' }}>
-              Curated in Toronto, Malvinka brings the finest European boutique finds directly to discerning parents. Inspired by the meticulous search for premium, lasting pieces for Malvina, our dashboard aggregates exclusive promotions so you can build a heritage wardrobe effortlessly.
-            </p>
+            {currentView === 'home' && (
+              <p style={{ color: '#555', lineHeight: '1.8', fontSize: '1.1rem', maxWidth: '650px', margin: '0 auto' }}>
+                Curated in Toronto, Malvinka brings the finest European boutique finds directly to discerning parents. Inspired by the meticulous search for premium, lasting pieces for Malvina, our dashboard aggregates exclusive promotions so you can build a heritage wardrobe effortlessly.
+              </p>
+            )}
           </div>
 
           {/* FTC Disclosure */}
@@ -84,10 +88,12 @@ export default function App() {
 
           {/* Promotions Grid */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '2.5rem' }}>
-            {promos.length === 0 ? (
-              <p style={{ gridColumn: '1 / -1', textAlign: 'center', color: '#888', padding: '3rem', fontStyle: 'italic' }}>Curating the latest boutique arrivals...</p>
+            {displayedPromos.length === 0 ? (
+              <p style={{ gridColumn: '1 / -1', textAlign: 'center', color: '#888', padding: '3rem', fontStyle: 'italic' }}>
+                {currentView === 'saved' ? "You haven't saved any items yet." : "Curating the latest boutique arrivals..."}
+              </p>
             ) : (
-              promos.map((promo) => (
+              displayedPromos.map((promo) => (
                 <div key={promo.id} style={{ backgroundColor: '#FFFFFF', borderRadius: '8px', overflow: 'hidden', border: '1px solid #F0F0F0', transition: 'transform 0.2s ease, box-shadow 0.2s ease', cursor: 'pointer' }}
                      onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = '0 12px 24px rgba(0,0,0,0.06)'; }}
                      onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = 'none'; }}>
