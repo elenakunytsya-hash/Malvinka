@@ -13,7 +13,7 @@ export default function PrivacyPolicy() {
       <p>Malvinka operates as a curated deal dashboard. We participate in affiliate marketing programs, including the Rakuten Affiliate Network. When you click on outgoing links to our merchant partners and make a purchase, we may earn a commission. Our affiliate partners use cookies to track these referrals and attribute sales correctly.</p>
 
       <h2 style={{ fontSize: '1.5rem', marginTop: '2rem', marginBottom: '1rem' }}>3. Information Collection & Firebase</h2>
-      <p>To deliver a fast, dynamic experience, our platform utilizes Google Firebase for hosting and database management. Firebase may collect basic, anonymous analytics (such as device type and browser) to ensure the site functions securely. We do not sell any personal data to third parties.</p>
+      <p>To deliver a fast, dynamic experience, our platform utilizes Vercel for web hosting and Google Firebase for database management. Firebase may collect basic, anonymous analytics (such as device type and browser) to ensure the site functions securely. We do not sell any personal data to third parties.</p>
 
       <h2 style={{ fontSize: '1.5rem', marginTop: '2rem', marginBottom: '1rem' }}>4. Contact Us</h2>
       <p>If you have any questions about this Privacy Policy or how your data is handled, please contact us at hello@malvinka.ca.</p>
