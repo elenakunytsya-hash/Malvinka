@@ -3,9 +3,9 @@ import React from 'react';
 export default function TermsOfService() {
   return (
     <div style={{ maxWidth: '800px', margin: '0 auto', padding: '4rem 2rem', lineHeight: '1.8', color: '#333' }}>
-      <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: '2.5rem', marginBottom: '2rem' }}>Terms of Service</h1>
+      <h1 style={{ fontFamily: '"Playfair Display", serif', fontSize: '2.5rem', marginBottom: '2rem' }}>Terms of Service</h1>
       <p style={{ color: '#666', marginBottom: '2rem' }}>Last updated: October 2026</p>
-      
+
       <h2 style={{ fontSize: '1.5rem', marginTop: '2rem', marginBottom: '1rem' }}>1. Agreement to Terms</h2>
       <p>By accessing Malvinka, you agree to be bound by these Terms of Service. We reserve the right to modify these terms at any time. Your continued use of the dashboard constitutes acceptance of those changes.</p>
 
@@ -17,6 +17,9 @@ export default function TermsOfService() {
 
       <h2 style={{ fontSize: '1.5rem', marginTop: '2rem', marginBottom: '1rem' }}>4. Limitation of Liability</h2>
       <p>While we strive to display accurate and up-to-date promotional codes and discounts, merchant offers can expire or change without notice. Malvinka is not liable for pricing discrepancies or expired offers encountered on the final merchant site.</p>
+
+      <h2 style={{ fontSize: '1.5rem', marginTop: '2rem', marginBottom: '1rem' }}>5. Governing Law</h2>
+      <p>These Terms shall be governed by and construed in accordance with the laws of the Province of Ontario and the federal laws of Canada applicable therein.</p>
     </div>
   );
 }
