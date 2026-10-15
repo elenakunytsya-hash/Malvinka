@@ -6,7 +6,7 @@ import PrivacyPolicy from './PrivacyPolicy';
 import TermsOfService from './TermsOfService';
 
 export default function App() {
-  const [currentView, setCurrentView] = useState('home');
+ const [currentView, setCurrentView] = useState(window.location.pathname === '/privacy' ? 'privacy' : 'home');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [savedPromos, setSavedPromos] = useState<string[]>([]);
   const [promos, setPromos] = useState<any[]>([]);
