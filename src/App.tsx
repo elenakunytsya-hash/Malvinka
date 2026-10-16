@@ -66,7 +66,7 @@ export default function App() {
           */}
         </div>
       </header>
-currentView === 'privacy' && <PrivacyPolicy/>
+{currentView === 'privacy' && <PrivacyPolicy />}
       {(currentView === 'home' || currentView === 'saved') && (
         <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '3rem 2rem' }}>
           
