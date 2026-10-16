@@ -137,8 +137,8 @@ export default function App() {
       <footer style={{ marginTop: '5rem', padding: '3rem 2rem', borderTop: '1px solid #EAEAEA', textAlign: 'center', fontSize: '0.85rem', color: '#888', backgroundColor: '#FFFFFF' }}>
         <p style={{ marginBottom: '1.5rem' }}>Malvinka may earn a commission on purchases made through our curated links.</p>
         <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem' }}>
-          <a href="/privacy" style={{ color: '#666', textDecoration: 'none', cursor: 'pointer', transition: 'color 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.color = '#1A1A1A'} onMouseLeave={(e) => e.currentTarget.style.color = '#666'}>Privacy Policy</span>
-         <a href="/privacy" style={{ color: '#666', textDecoration: 'none', cursor: 'pointer', transition: 'color 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.color = '#1A1A1A'} onMouseLeave={(e) => e.currentTarget.style.color = '#666'}>Terms of Service</a>
+         <a href="/privacy" style={{ color: '#666', textDecoration: 'none', cursor: 'pointer', transition: 'color 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.color = '#1A1A1A'} onMouseLeave={(e) => e.currentTarget.style.color = '#666'}>Privacy Policy</a>
+<a href="/terms" style={{ color: '#666', textDecoration: 'none', cursor: 'pointer', transition: 'color 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.color = '#1A1A1A'} onMouseLeave={(e) => e.currentTarget.style.color = '#666'}>Terms of Service</a>
           <a href="mailto:hello@malvinka.ca" style={{ color: '#666', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.color = '#1A1A1A'} onMouseLeave={(e) => e.currentTarget.style.color = '#666'}>Contact Us</a>
         </div>
       </footer>
