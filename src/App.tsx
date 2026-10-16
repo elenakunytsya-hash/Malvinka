@@ -131,7 +131,7 @@ export default function App() {
         </main>
       )}
 
-      {currentView === 'privacy' && <PrivacyPolicy />}
+
       {currentView === 'terms' && <TermsOfService />}
 
       <footer style={{ marginTop: '5rem', padding: '3rem 2rem', borderTop: '1px solid #EAEAEA', textAlign: 'center', fontSize: '0.85rem', color: '#888', backgroundColor: '#FFFFFF' }}>
