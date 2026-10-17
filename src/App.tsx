@@ -45,9 +45,11 @@ const [currentView, setCurrentView] = useState(window.location.pathname === '/pr
       <header style={{ backgroundColor: '#FFFFFF', padding: '1rem 3rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #EAEAEA', position: 'sticky', top: 0, zIndex: 10 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
           <ShoppingBag size={22} color="#2C2C2C" />
-          <h1 onClick={() => setCurrentView('home')} style={{ margin: 0, fontSize: '1.6rem', fontFamily: "'Playfair Display', serif", fontWeight: '700', letterSpacing: '0.5px', cursor: 'pointer' }}>
-            Malvinka
-          </h1>
+          <a href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+  <h1 style={{ margin: 0, fontSize: '1.6rem', fontFamily: '"Playfair Display", serif', fontWeight: '700' }}>
+    Malvinka
+  </h1>
+</a>
         </div>
         <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
           <button 
