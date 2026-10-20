@@ -1,23 +1,21 @@
-import { Timestamp } from 'firebase-admin/firestore';
-
 export type NetworkType = 'rakuten' | 'awin';
 
 export interface MerchantDocument {
-  id: string; // e.g., "olaola_118551"
-  name: string; // "OLAOLA"
+  id: string;
+  name: string;
   network: NetworkType;
-  networkMerchantId: number; // 118551
-  cookieWindowDays: number; // 30
-  baseCommissionRate: number; // 0.10 (10%)
+  networkMerchantId: number;
+  cookieWindowDays: number;
+  baseCommissionRate: number;
   hasSalePenalty: boolean;
   excludedBrands: string[];
   excludedSkus: string[];
   isActive: boolean;
-  updatedAt: Timestamp;
+  updatedAt: string | Date; // Universal type for both client and server
 }
 
 export interface PromotionDocument {
-  id: string; // Unique slug (e.g., "olaola-organic-cotton-robe-kids")
+  id: string;
   title: string;
   brand: string;
   category: 'apparel' | 'footwear' | 'accessories' | 'lifestyle';
@@ -37,9 +35,9 @@ export interface PromotionDocument {
   primaryImageUrl: string;
   pinData: {
     isPinned: boolean;
-    pinnedAt?: Timestamp;
+    pinnedAt?: string | Date;
   };
   status: 'active' | 'expired' | 'review';
-  createdAt: Timestamp;
-  updatedAt: Timestamp;
+  createdAt: string | Date;
+  updatedAt: string | Date;
 }
